@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <title>Will I Get Infected?</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/webstyle.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/owl-carousel.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="api.js"></script>
+</head>
+
+<body id="thisisthebody">
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="#welcome" class="logo">WIGI</a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="#welcome" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="#try">Try It</a></li>
+                            <li class="scroll-to-section"><a href="#about">About</a></li>
+                            <li class="scroll-to-section"><a href="#apps">Apps</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="welcome-area" id="welcome">
+
+        <!-- ***** Header Text Start ***** -->
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="left-text col-lg-6 col-md-6 col-sm-12 col-xs-12"
+                        data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                        <h1>Will I Get Infected?</h1>
+                        <p>Get a prediction based off the latest Coronavirus (COVID&#8209;19) data from Johns Hopkins
+                            University.</p>
+                        <a href="#try" class="main-button-slider">Try it!</a>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"
+                        data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                        <img src="assets/images/corona.png" class="rounded img-fluid d-block mx-auto" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Header Text End ***** -->
+    </div>
+    <!-- ***** Welcome Area End ***** -->
+
+
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section" id="try">
+        <div class="container">
+            <div class="row">
+                <div class="right-text col-lg-12 col-md-14 col-sm-12 mobile-top-fix">
+                    <div class="container"></div>
+                    <div id="inputdiv" class="inputdiv">
+                        <div class="left-heading">
+                            <h5>Will I Get Infected?</h5>
+                            <p><i>(Last updated: 3/19/2020)</i>
+                                <p>
+                        </div>
+                        <div>
+                            <div id="countrydiv" class="countrydiv">
+                                <form autocomplete="off">
+                                    <div class="autocomplete" style="width:100%;">
+                                        <input id="selectCountry" type="text" name="myCountry" placeholder="Country">
+                                        <i class="far fa-arrow-alt-circle-right arrowButton" id="arrowButton"
+                                            style="color: rgb(0, 0, 0); font-size: 70px; position: absolute; right: 6px; top: 5%;"></i>
+                                    </div>
+                                </form>
+                                <div style="height: 40px;"></div>
+                                <script src="countrydrop.js"></script>
+                            </div>
+                            <div class="statediv" id="statediv">
+                                <form autocomplete="off">
+                                    <div class="autocomplete" style="width:100%;">
+                                        <input id="selectState" type="text" name="myState" placeholder="State">
+                                    </div>
+                                </form>
+                                <div style="height: 40px;"></div>
+                                <script src="statedrop.js"></script>
+                            </div>
+                            <button class="main-button" onclick="getAPI()" id="submitbutton">Submit</button>
+                        </div>
+                    </div>
+                    <div id="resultdiv" class="resultdiv">
+                        <div class="left-heading">
+                            <h5>Results</h5>
+                            <p style="font-size: 10px;">Disclaimer: This prediction is based off real data, but may not provide accurate results.</p>
+                        </div>
+                        <div>
+                            <p id="chanceInfected" class="chanceInfected"></p>
+                            <button class="main-button resetbutton" id="resetbutton"
+                                onclick="bopemback()">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+
+
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="left-text col-lg-7 col-md-12 col-sm-12 mobile-bottom-fix">
+                    <div class="left-heading">
+                        <h5>About</h5>
+                    </div>
+                    <p>What makes WIGI's apps and API so great?
+                    </p>
+                    <ul>
+                        <li>
+                            <img src="assets/images/data.png" alt="" style="margin-right: 15px; transform: scale(.5);">
+                            <div class="text">
+                                <h6>High Quality Data</h6>
+                                <p>Direct updates from Johns Hopkins database.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="assets/images/easy.png" alt="" style="margin-right: 15px; transform: scale(.5);">
+                            <div class="text">
+                                <h6>Easy to Use</h6>
+                                <p>Intuitive design. Designed for many platforms.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="assets/images/integr.png" alt=""
+                                style="margin-right: 15px; transform: scale(.5);">
+                            <div class="text">
+                                <h6>Easy Integration</h6>
+                                <p>Open source API for firebase on our <a target="_blank"
+                                        href="https://github.com/willigetinfected">GitHub</a>.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right-image col-lg-7 col-md-12 col-sm-12 mobile-bottom-fix-big"
+                    data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+
+    <!-- ***** Features Small Start ***** -->
+    <section class="section" id="apps">
+        <div class="container">
+            <div class="row">
+                <div class="owl-carousel owl-theme">
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="assets/images/alexa.png" alt=""></i>
+                        </div>
+                        <h5 class="service-title">Alexa Skill</h5>
+                        <p>Add our Alexa skill to your Alexa enabled device. This provides an easy-to-use interface for
+                            finding out current COVID-19 information.</p>
+                        <a href="#" class="main-button">Add to your Device</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="assets/images/discord.png" alt=""></i>
+                        </div>
+                        <h5 class="service-title">Discord Bot</h5>
+                        <p>Add our Discord Bot to your discord server. This provides an easy-to-use command interface
+                            for finding out current COVID-19 information.</p>
+                        <a href="#" class="main-button">Add to your Server</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="assets/images/website.png" alt=""></i>
+                        </div>
+                        <h5 class="service-title">Website</h5>
+                        <p>You are already looking at it! But, visit the link below if you want a look at how this
+                            website works behind the scences.</p>
+                        <a href="#" class="main-button">Check out the Code</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="assets/images/api.png" alt=""></i>
+                        </div>
+                        <h5 class="service-title">API</h5>
+                        <p>All of our products use the API linked below. Documentation is provided for developers to
+                            use in their own proejcts.</p>
+                        <a href="#" class="main-button">Documentation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Small End ***** -->
+
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+
+            <div class="">
+                <p class="copyright" style="text-align: center;">Copyright &copy; 2020 <a rel="nofollow"
+                        href="https://markamirakan.com">Mark
+                        Amirkan</a> & <a rel="nofollow" href="https://reesehoffart.com">Reese Hoffart</a></p>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/imgfix.min.js"></script>
+
+    <!-- Global Init -->
+    <script src="assets/js/custom.js"></script>
+
+</body>
+
+</html>
