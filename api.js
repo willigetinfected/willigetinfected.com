@@ -18,10 +18,10 @@ function getAPI() {
       if (data.week == null) $('#chanceInfected').text('Please insert a valid location. If the error proceeds, the location you input might not be in our database yet. Check back later.');
       else if ($('#statediv').css('display') == 'block' && selectState.value == '') $('#chanceInfected').text('Please enter a state/province for that country.');
       else $('#chanceInfected').text(
-        ' In ' + location + ', there are ' + data.confirmed + ' COVID-19 cases out of the total population of ' + data.population + '.' +
+        'In ' + location + ', there are ' + data.confirmed + ' COVID-19 cases out of the total population of ' + data.population + '.\n' +
         'This means you have a ' + data.week + '% chance of getting infected in the next week, ' +
         data.month + '% chance in the next month, ' +
-        'and a ' + data.threemonth + '% chance in the three months.'
+        'and a ' + data.eightweek + '% chance in the next 8 weeks.'
         );
     } else {
       console.log('error');
